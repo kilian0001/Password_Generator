@@ -1,0 +1,2 @@
+# Pyperclip is used for copying generated passwords to the clipboard.
+pyperclip==1.8.2
