@@ -54,10 +54,10 @@ def main():
     print(("Password Generator" if language == 'en' else "Passwortgenerator"))
 
     length = int(input("\n" + ("Enter the desired password length: " if language == 'en' else "Geben Sie die gewünschte Passwortlänge ein: ")))
-    use_uppercase = input(("Use uppercase letters? (Yes/No): " if language == 'en' else "Großbuchstaben verwenden? (Ja/Nein): ")).lower() == 'yes'
-    use_lowercase = input(("Use lowercase letters? (Yes/No): " if language == 'en' else "Kleinbuchstaben verwenden? (Ja/Nein): ")).lower() == 'yes'
-    use_numbers = input(("Use numbers? (Yes/No): " if language == 'en' else "Zahlen verwenden? (Ja/Nein): ")).lower() == 'yes'
-    use_special_chars = input(("Use special characters? (Yes/No): " if language == 'en' else "Sonderzeichen verwenden? (Ja/Nein): ")).lower() == 'yes'
+    use_uppercase = input(("Use uppercase letters? (Yes/No): " if language == 'en' else "Großbuchstaben verwenden? (Ja/Nein): ")).lower() == 'yes' or 'ja'
+    use_lowercase = input(("Use lowercase letters? (Yes/No): " if language == 'en' else "Kleinbuchstaben verwenden? (Ja/Nein): ")).lower() == 'yes' or 'ja'
+    use_numbers = input(("Use numbers? (Yes/No): " if language == 'en' else "Zahlen verwenden? (Ja/Nein): ")).lower() == 'yes' or 'ja'
+    use_special_chars = input(("Use special characters? (Yes/No): " if language == 'en' else "Sonderzeichen verwenden? (Ja/Nein): ")).lower() == 'yes' or 'ja'
 
     password = generate_password(length, use_uppercase, use_lowercase, use_numbers, use_special_chars, language)
 
