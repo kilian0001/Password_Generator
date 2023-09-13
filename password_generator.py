@@ -7,6 +7,7 @@
 
 import random
 import string
+import sys
 import pyperclip #dont worry if it shows as not installed. It has to work:)
 
 def generate_password(length, use_uppercase, use_lowercase, use_numbers, use_special_chars, language):
@@ -50,8 +51,18 @@ def choose_language():
     return language
 
 def main():
+
+    ascii_art = """
+ ___                                  _  ___                             _            
+| . \ ___  ___ ___ _ _ _  ___  _ _  _| |/  _>  ___ ._ _  ___  _ _  ___ _| |_ ___  _ _ 
+|  _/<_> |<_-<<_-<| | | |/ . \| '_>/ . || <_/\/ ._>| ' |/ ._>| '_><_> | | | / . \| '_>
+|_|  <___|/__//__/|__/_/ \___/|_|  \___|`____/\___.|_|_|\___.|_|  <___| |_| \___/|_|  
+                                                                                       
+    """
+    sys.stdout.write("\x1b]2;Kilian01 I PasswordGenerator\x07")
     language = choose_language()
-    print(("Password Generator" if language == 'en' else "Passwortgenerator"))
+    print(ascii_art)
+    #print(("Password Generator" if language == 'en' else "Passwortgenerator"))
 
     length = int(input("\n" + ("Enter the desired password length: " if language == 'en' else "Geben Sie die gewünschte Passwortlänge ein: ")))
     use_uppercase = input(("Use uppercase letters? (Yes/No): " if language == 'en' else "Großbuchstaben verwenden? (Ja/Nein): ")).lower() == 'yes' or 'ja'
@@ -70,6 +81,10 @@ def main():
             print((("Error copying to clipboard:" if language == 'en' else "Fehler beim Kopieren in die Zwischenablage:")), str(e))
         strength = password_strength(password, language)
         print("\n" + (("Password Strength:" if language == 'en' else "Passwortsicherheit:")), strength)
+    print("\n" + (("This script will wait for user input before closing the CMD window." if language == 'en' else "Das Fenster schließt sich wenn du die Enter Taste betätigst")))
+    #print("This script will wait for user input before closing the CMD window.")
+    user_input = input((("Press Enter to exit..." if language == 'en' else "Betätige die Enter Tast um das Fenster zu schließen...")))
+
 
 if __name__ == "__main__":
     main()
