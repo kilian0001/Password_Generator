@@ -62,7 +62,6 @@ def main():
     sys.stdout.write("\x1b]2;Kilian01 I PasswordGenerator\x07")
     language = choose_language()
     print(ascii_art)
-    #print(("Password Generator" if language == 'en' else "Passwortgenerator"))
 
     length = int(input("\n" + ("Enter the desired password length: " if language == 'en' else "Geben Sie die gewünschte Passwortlänge ein: ")))
     use_uppercase = input(("Use uppercase letters? (Yes/No): " if language == 'en' else "Großbuchstaben verwenden? (Ja/Nein): ")).lower() == 'yes' or 'ja'
@@ -82,7 +81,6 @@ def main():
         strength = password_strength(password, language)
         print("\n" + (("Password Strength:" if language == 'en' else "Passwortsicherheit:")), strength)
     print("\n" + (("This script will wait for user input before closing the CMD window." if language == 'en' else "Das Fenster schließt sich wenn du die Enter Taste betätigst")))
-    #print("This script will wait for user input before closing the CMD window.")
     user_input = input((("Press Enter to exit..." if language == 'en' else "Betätige die Enter Tast um das Fenster zu schließen...")))
 
 
